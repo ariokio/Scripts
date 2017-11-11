@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # keep it clean
-rm sslProxyListIP sslproxy*
+if [ -f sslProxyListIP && -f sslproxy && -f sslproxy.md ] 
+then
+	rm sslProxyListIP sslproxy*
+fi
 
 curl https://www.sslproxies.org/ -o sslproxy
 echo "5 sec"
